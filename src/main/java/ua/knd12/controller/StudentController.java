@@ -1,4 +1,4 @@
-package ua.shid11.controller;
+package ua.knd12.controller;
 
 public class StudentController {
 }

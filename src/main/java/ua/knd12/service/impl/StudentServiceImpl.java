@@ -1,4 +1,4 @@
-package ua.shid11.service.impl;
+package ua.knd12.service.impl;
 
 public class StudentServiceImpl {
 }

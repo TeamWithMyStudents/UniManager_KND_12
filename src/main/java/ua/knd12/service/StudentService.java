@@ -1,4 +1,4 @@
-package ua.shid11.service;
+package ua.knd12.service;
 
 public interface StudentService {
 }
