@@ -4,12 +4,10 @@ public abstract class User {
     private int id;
     private String name;
     private String surname;
-    protected User[]users;
 
-    public User(String name, String surname, User[] users) {
+    public User(String name, String surname) {
         this.name = name;
         this.surname = surname;
-        this.users = users;
     }
 
     public int getId() {
@@ -17,7 +15,7 @@ public abstract class User {
     }
 
     public void setId(int id) {
-        this.id = id;
+        this.id = (int)(Math.random()*100);
     }
 
     public String getName() {
@@ -36,9 +34,6 @@ public abstract class User {
         this.surname = surname;
     }
 
-    public void add(User[] users){
-
-    }
 
     @Override
     public String toString() {
