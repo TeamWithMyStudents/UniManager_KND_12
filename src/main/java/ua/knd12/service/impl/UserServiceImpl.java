@@ -14,12 +14,6 @@ abstract class UserServiceImpl implements UserService {
     }
 
     public void add(User u){
-        int counter = 0;
-        int newSize = 0;
-        if (initialArray.length<=counter)
-            newSize = (initialArray.length*2)+1;
-            initialArray = Arrays.copyOf(initialArray,newSize);
-            initialArray[counter] = u;
     }
     public void delete(int id){
 
