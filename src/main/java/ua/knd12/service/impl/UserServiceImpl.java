@@ -1,11 +1,10 @@
 package ua.knd12.service.impl;
 
 import ua.knd12.model.User;
-import ua.knd12.service.StudentService;
+import ua.knd12.service.UserService;
 
-import java.util.Arrays;
 
-abstract class UserServiceImpl implements StudentService {
+abstract class UserServiceImpl implements UserService {
     protected User[]initialArray;
 
     public UserServiceImpl(User[] initialArray) {
@@ -13,8 +12,7 @@ abstract class UserServiceImpl implements StudentService {
     }
 
     public void add(User u){
-        if(initialArray.length==0)
-            initialArray=Arrays.copyOf(initialArray,5);
+        int counter = 1;
 
     }
     public void delete(int id){
