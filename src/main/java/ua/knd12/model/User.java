@@ -15,7 +15,7 @@ public abstract class User {
     }
 
     public void setId(int id) {
-        this.id = (int)(Math.random()*100);
+        this.id = (int) (Math.random() * 100);
     }
 
     public String getName() {
