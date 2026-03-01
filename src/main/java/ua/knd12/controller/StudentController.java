@@ -5,7 +5,8 @@ import ua.knd12.model.User;
 import java.util.Arrays;
 
 public class StudentController {
-    protected User[]initialArray;
+    protected static User[]initialArray;
+    private int counter = 0;
 
     public StudentController(User[] initialArray) {
         this.initialArray = initialArray;
@@ -13,7 +14,7 @@ public class StudentController {
 
 
     public void add(User u) {
-        int counter = 0;
+
         int newSize = (initialArray.length*2)+1;
         if (initialArray.length<=counter) {
             initialArray = Arrays.copyOf(initialArray, newSize);
@@ -23,5 +24,15 @@ public class StudentController {
     }
 
     public void delete(int id) {
+        for (User user : initialArray) {
+            if(user !=null && user.getId()==id) {
+                user = null;
+                counter--;
+            }
+        }
+    }
+
+    public static User[] getInitialArray() {
+        return initialArray;
     }
 }
