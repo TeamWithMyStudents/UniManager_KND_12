@@ -24,9 +24,10 @@ public class StudentController {
     }
 
     public void delete(int id) {
-        for (User user : initialArray) {
-            if(user !=null && user.getId()==id) {
-                user = null;
+        for (int i=0;i<initialArray.length;i++) {
+            if(initialArray[i].getId()==id) {
+                initialArray[initialArray.length-1] = initialArray[i];
+                initialArray[i] = null;
                 counter--;
             }
         }
