@@ -12,7 +12,6 @@ public abstract class UserServiceImpl implements UserService {
         this.initialArray = initialArray;
     }
 
-
     public void add(User u) {
 
         int newSize = (initialArray.length*2)+1;
