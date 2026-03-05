@@ -24,11 +24,13 @@ public class StudentController {
     }
 
     public void delete(int id) {
+        int pos = initialArray.length-1;
         for (int i=0;i<initialArray.length;i++) {
             if(initialArray[i].getId()==id) {
-                initialArray[initialArray.length-1] = initialArray[i];
+                initialArray[pos] = initialArray[i];
                 initialArray[i] = null;
                 counter--;
+                pos--;
             }
         }
     }
