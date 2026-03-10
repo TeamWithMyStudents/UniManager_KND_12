@@ -36,7 +36,7 @@ public abstract class UserServiceImpl implements UserService {
 
     public void getAll() {
         for (User user : UserServiceImpl.getInitialArray()) {
-            if (user!=null)
+            if (user != null)
                 System.out.println(user);
         }
     }
