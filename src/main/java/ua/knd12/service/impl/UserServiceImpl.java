@@ -23,14 +23,21 @@ public abstract class UserServiceImpl implements UserService {
     }
 
     public void delete(int id) {
-        int pos = initialArray.length-1;
-        for (int i=0;i<initialArray.length;i++) {
-            if(initialArray[i].getId()==id) {
+        int pos = initialArray.length - 1;
+        for (int i = 0; i < initialArray.length; i++) {
+            if (initialArray[i].getId() == id) {
                 initialArray[pos] = initialArray[i];
                 initialArray[i] = null;
                 counter--;
                 pos--;
             }
+        }
+    }
+
+    public void getAll() {
+        for (User user : UserServiceImpl.getInitialArray()) {
+            if (user!=null)
+                System.out.println(user);
         }
     }
 
