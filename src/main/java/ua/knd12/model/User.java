@@ -4,10 +4,12 @@ public abstract class User {
     private int id;
     private String name;
     private String surname;
+    private static int counter = 0;
 
-    public User(String name, String surname) {
+    public User(String name, String surname, int id) {
         this.name = name;
         this.surname = surname;
+        this.id = counter++;
     }
 
     public int getId() {
@@ -15,7 +17,7 @@ public abstract class User {
     }
 
     public void setId(int id) {
-        this.id = (int)(Math.random()*100);
+        this.id = id;
     }
 
     public String getName() {
