@@ -1,5 +1,4 @@
 package ua.knd12.service.impl;
-
 import ua.knd12.model.User;
 import ua.knd12.service.UserService;
 
@@ -18,15 +17,36 @@ abstract class UserServiceImpl implements UserService {
     }
 
     public void add(User u) {
-        int newSize = 0;
-        if (initialArray.length <= counter)
-            newSize = (initialArray.length * 2) + 1;
-        initialArray = Arrays.copyOf(initialArray, newSize);
+
+        int newSize = (initialArray.length*2)+1;
+        if (initialArray.length<=counter) {
+            initialArray = Arrays.copyOf(initialArray, newSize);
+        }
         initialArray[counter] = u;
-
+        counter++;
     }
-    public void delete(int id) {
 
+    public void delete(int id) {
+        int pos = initialArray.length - 1;
+        for (int i = 0; i < initialArray.length; i++) {
+            if (initialArray[i].getId() == id) {
+                initialArray[pos] = initialArray[i];
+                initialArray[i] = null;
+                counter--;
+                pos--;
+            }
+        }
+    }
+
+    public void getAll() {
+        for (User user : UserServiceImpl.getInitialArray()) {
+            if (user != null)
+                System.out.println(user);
+        }
+    }
+
+    public static User[] getInitialArray() {
+        return initialArray;
     }
 
     public User[] findByName(String query) {
