@@ -14,6 +14,14 @@ public class StudentServiceImpl extends UserServiceImpl implements StudentServic
     public void findByGroup(String groupName) {
 
     }
+
+    @Override
+    public void add(Student student) {
+    }
+
+    @Override
+    public void delete(int id) {
+    }
 }
 
 
