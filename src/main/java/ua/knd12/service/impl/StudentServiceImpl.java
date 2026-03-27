@@ -17,7 +17,7 @@ public class StudentServiceImpl extends UserServiceImpl implements StudentServic
             if (user == null) continue;
             if (user instanceof Student) {
                 Student student = (Student) user;
-                if (groupName.equals(student.getGroup())) {
+                if (student.getGroup().equals(groupName)) {
                     System.out.println(student);
                     find = true;
                 }
