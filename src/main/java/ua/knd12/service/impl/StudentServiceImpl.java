@@ -12,9 +12,12 @@ public class StudentServiceImpl extends UserServiceImpl implements StudentServic
     @Override
     public void findByGroup(String groupName) {
         boolean find = false;
+        if (groupName == null) {
+            System.out.println("Назва групи не може бути порожньою");
+            return;
+        }
 
         for (User user : initialArray) {
-            if (user == null) continue;
             if (user instanceof Student) {
                 Student student = (Student) user;
                 if (student.getGroup().equals(groupName)) {
