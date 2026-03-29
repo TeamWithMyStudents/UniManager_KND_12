@@ -37,7 +37,7 @@ public class Teacher extends User{
     }
 
     @Override
-    public String   toString() {
+    public String toString() {
         return "Teacher{" +
                 "department='" + department + '\'' +
                 ", degree='" + degree + '\'' +
