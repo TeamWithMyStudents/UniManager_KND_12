@@ -3,8 +3,8 @@ package ua.knd12.model;
 public class Student extends User {
     private String group;
 
-    public Student(String name, String surname, String group) {
-        super(name, surname);
+    public Student(String name, String surname, int id, String group) {
+        super(name, surname, id);
         this.group = group;
     }
 

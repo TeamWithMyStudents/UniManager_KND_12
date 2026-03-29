@@ -7,8 +7,8 @@ import java.util.Locale;
 import java.text.Collator;
 import java.util.Comparator;
 
-abstract class UserServiceImpl implements UserService {
-    protected User[] initialArray;
+public abstract class UserServiceImpl implements UserService {
+    protected static User[] initialArray;
     protected int counter = 0;
 
 
