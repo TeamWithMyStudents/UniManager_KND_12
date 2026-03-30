@@ -4,6 +4,7 @@ public class Teacher extends User{
     private String department;
     private String degree;
     private double salary;
+    private static int counter = 0;
 
     public Teacher(String name, String surname, int id, String department, String degree, double salary) {
         super(name, surname, id);
