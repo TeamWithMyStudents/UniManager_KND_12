@@ -2,7 +2,10 @@ package ua.knd12;
 
 import ua.knd12.controller.StudentController;
 import java.util.Scanner;
-
+/**
+ * Головний клас додатка для управління базою даних.
+ * Запускає інтерактивне консольне меню для взаємодії з користувачем.
+ */
 public class UniManager {
     static StudentController controller = new StudentController();
     static Scanner scanner = new Scanner(System.in);
@@ -26,8 +29,10 @@ public class UniManager {
                 try {
                     int id = Integer.parseInt(scanner.nextLine());
                     controller.delete(id);
+                } catch (NumberFormatException e) {
+                    System.out.println("Помилка: введіть саме число!");
                 } catch (Exception e) {
-                    System.out.println("Помилка: введіть число!");
+                    System.out.println("Помилка під час видалення: " + e.getMessage());
                 }
             }
             else if (choice.equals("3")) {
