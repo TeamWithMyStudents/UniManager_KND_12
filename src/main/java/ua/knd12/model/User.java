@@ -1,7 +1,7 @@
 package ua.knd12.model;
 
 public abstract class User {
-    private int id;
+    protected int id;
     private String name;
     private String surname;
     private static int counter = 0;
@@ -36,6 +36,13 @@ public abstract class User {
         this.surname = surname;
     }
 
+    public static int getCounter() {
+        return counter;
+    }
+
+    public static void setCounter(int counter) {
+        User.counter = counter;
+    }
 
     @Override
     public String toString() {
