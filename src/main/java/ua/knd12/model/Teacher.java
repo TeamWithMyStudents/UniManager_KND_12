@@ -11,7 +11,7 @@ public class Teacher extends User{
         this.department = department;
         this.degree = degree;
         this.salary = salary;
-        this.id = getCounter();
+        this.setId(getCounter());
     }
 
     public String getDepartment() {

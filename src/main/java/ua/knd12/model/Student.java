@@ -6,7 +6,7 @@ public class Student extends User {
     public Student(String name, String surname, int id, String group) {
         super(name, surname, id);
         this.group = group;
-        this.id = getCounter();
+        this.setId(getCounter());
     }
 
     public String getGroup() {
