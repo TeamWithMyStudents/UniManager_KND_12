@@ -31,6 +31,22 @@ public class StudentServiceImpl extends UserServiceImpl implements StudentServic
         }
 
     }
+    /**
+     * Додає студента до загального списку користувачів.
+     * об'єкт студента кодребіт просить додавати коментарі  >:\
+     */
+    @Override
+    public void add(Student student) {
+        super.add(student);
+    }
+    /**
+     * Видаляє студента за ідентифікатором.
+     *
+     */
+    @Override
+    public void delete(int id) {
+        super.delete(id);
+    }
 }
 
 

@@ -1,5 +1,7 @@
 package ua.knd12.service;
 
+import ua.knd12.model.Student;
+
 public interface StudentService extends UserService {
     public void findByGroup(String groupName);
 
@@ -7,4 +9,7 @@ public interface StudentService extends UserService {
 
 
 
+    void add(Student student);
+
+    void delete(int id);
 }

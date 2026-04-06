@@ -36,6 +36,14 @@ public abstract class User {
         this.surname = surname;
     }
 
+    public static int getCounter() {
+        return counter;
+    }
+
+    public static void setCounter(int counter) {
+        if (counter>=0)
+            User.counter = counter;
+    }
 
     @Override
     public String toString() {
