@@ -9,28 +9,24 @@ public class TeacherController {
 
     public void create(String input) {
         String[] p = input.trim().split("\\s+");
-
         if (p.length < 5) {
             System.out.println("Помилка: треба 5 параметрів!");
             return;
         }
 
-        Teacher t = new Teacher(
-                p[0],
-                p[1],
-                0,
-                p[2],
-                p[3],
-                Double.parseDouble(p[4])
-        );
+        try {
 
-        service.add(t);
-        System.out.println("Викладач доданий успішно!");
+            double salary = Double.parseDouble(p[4]);
+            Teacher t = new Teacher(p[0], p[1], 0, p[2], p[3], salary);
+            service.add(t);
+            System.out.println("Викладач доданий успішно!");
+        } catch (NumberFormatException e) {
+            System.out.println("Помилка: зарплата повинна бути числовим значенням!");
+        }
     }
 
-
     public void showBudget() {
-        System.out.print("Загальна зарплата: ");
+        System.out.print("Результат розрахунку: ");
         service.calculateTotalSalary();
     }
 }
