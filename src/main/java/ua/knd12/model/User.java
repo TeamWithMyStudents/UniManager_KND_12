@@ -2,8 +2,8 @@ package ua.knd12.model;
 
 public abstract class User {
     private int id;
-    protected String name;
-    protected String surname;
+    private String name;
+    private String surname;
     private static int counter = 0;
 
     public User(String name, String surname, int id) {
