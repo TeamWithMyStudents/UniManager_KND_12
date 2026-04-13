@@ -30,17 +30,16 @@ public class TeacherServiceImpl extends UserServiceImpl implements TeacherServic
     @Override
     public void calculateTotalSalary() {
         double suma = 0;
-        for (int i = 0; i < counter; i++) {
-            if (UserServiceImpl.initialArray[i] instanceof Teacher) {
-                Teacher t = (Teacher) UserServiceImpl.initialArray[i];
-                suma += t.getSalary();
+        for (User user : UserServiceImpl.initialArray) {
+            if (user instanceof Teacher) {
+                suma += ((Teacher) user).getSalary();
             }
         }
         System.out.println("Загальний бюджет зарплат: " + suma);
     }
 
     @Override
-    public void filterByDegree(String degree) {і
+    public void filterByDegree(String degree) {
         String normalizedDegree = (degree == null) ? "" : degree.trim();
 
         if (normalizedDegree.isEmpty()) {
@@ -51,10 +50,9 @@ public class TeacherServiceImpl extends UserServiceImpl implements TeacherServic
         System.out.println("Результати пошуку для '" + normalizedDegree + "':");
         boolean found = false;
 
-        for (int i = 0; i < counter; i++) {
-            if (UserServiceImpl.initialArray[i] instanceof Teacher) {
-                Teacher t = (Teacher) UserServiceImpl.initialArray[i];
-
+        for (User user : UserServiceImpl.initialArray) {
+            if (user instanceof Teacher) {
+                Teacher t = (Teacher) user;
                 if (t.getDegree().equalsIgnoreCase(normalizedDegree)) {
                     System.out.println(t.getName() + " " + t.getSurname() + " (" + t.getDegree() + ") - " + t.getSalary());
                     found = true;
@@ -62,6 +60,5 @@ public class TeacherServiceImpl extends UserServiceImpl implements TeacherServic
             }
         }
         if (!found) System.out.println("Викладачів не знайдено.");
-    }
     }
 }
