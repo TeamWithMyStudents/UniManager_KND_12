@@ -64,6 +64,7 @@ public class UniManager {
             System.out.println("\n--- МЕНЮ ВИКЛАДАЧІВ ---");
             System.out.println("1. Додати викладача");
             System.out.println("2. Показати бюджет зарплат");
+            System.out.println("3. Пошук за ступенем");
             System.out.println("0. Назад");
             System.out.print("Вибір: ");
 
@@ -74,7 +75,11 @@ public class UniManager {
                 teacherController.create(scanner.nextLine());
             } else if (choice.equals("2")) {
                 teacherController.showBudget();
-            } else if (choice.equals("0")) {
+            }else if (choice.equals("3")) { // Нова логіка перевірки
+                System.out.print("Введіть ступінь для пошуку (наприклад, PhD): ");
+                String degree = scanner.nextLine();
+                teacherController.filter(degree);
+            }else if (choice.equals("0")) {
                 break;
             }
         }

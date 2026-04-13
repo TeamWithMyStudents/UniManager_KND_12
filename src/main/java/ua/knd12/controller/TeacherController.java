@@ -19,7 +19,6 @@ public class TeacherController {
             double salary = Double.parseDouble(p[4]);
             Teacher t = new Teacher(p[0], p[1], 0, p[2], p[3], salary);
             service.add(t);
-            System.out.println("Викладач доданий успішно!");
         } catch (NumberFormatException e) {
             System.out.println("Помилка: зарплата повинна бути числовим значенням!");
         }
@@ -28,5 +27,9 @@ public class TeacherController {
     public void showBudget() {
         System.out.print("Результат розрахунку: ");
         service.calculateTotalSalary();
+    }
+
+    public void filter(String degree) {
+        service.filterByDegree(degree);
     }
 }
