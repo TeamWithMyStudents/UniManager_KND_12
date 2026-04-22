@@ -2,47 +2,37 @@ package ua.knd12.service.impl;
 import ua.knd12.model.User;
 import ua.knd12.service.UserService;
 
-import java.util.Arrays;
-import java.util.Locale;
+import java.util.*;
 import java.text.Collator;
-import java.util.Comparator;
 
 public abstract class UserServiceImpl implements UserService {
     protected static User[] initialArray;
-    protected int counter = 0;
+    protected List repository;
+    protected int counter = repository.size();
 
 
     public UserServiceImpl(User[] initialArray) {
         this.initialArray = initialArray;
+        this.repository = new ArrayList<>();
     }
 
     public void add(User u) {
-
-        int newSize = (initialArray.length*2)+1;
-        if (initialArray.length<=counter) {
-            initialArray = Arrays.copyOf(initialArray, newSize);
-        }
-        initialArray[counter] = u;
-        counter++;
+        if (u!=null)
+            repository.add(u);
+        else
+            System.out.println("Ви не можете додати пустого користувача");
     }
 
     public void delete(int id) {
-        int pos = initialArray.length - 1;
-        for (int i = 0; i < initialArray.length; i++) {
-            if (initialArray[i].getId() == id) {
-                initialArray[pos] = initialArray[i];
-                initialArray[i] = null;
-                counter--;
-                pos--;
-            }
-        }
+        if (repository.get(id)!=null)
+            repository.remove(id);
+        else
+            System.out.println("Немаэ такого користувача");
     }
 
-    public void getAll() {
-        for (User user : UserServiceImpl.getInitialArray()) {
-            if (user != null)
-                System.out.println(user);
-        }
+
+    public List getAll() {
+        return repository;
     }
 
     public static User[] getInitialArray() {
